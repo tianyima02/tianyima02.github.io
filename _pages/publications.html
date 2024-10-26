@@ -14,10 +14,19 @@ author_profile: true
 <ul>
   {% for paper in working_papers %}
     <li>
-      <strong>{{ paper.title }}</strong><br>
+      {% if paper.link %}
+        <strong><a href="{{ paper.link }}" target="_blank">{{ paper.title }}</a></strong>
+      {% else %}
+        <strong>{{ paper.title }}</strong>
+      {% endif %}
+      <br>
       {{ paper.authors }}<br>
       {% if paper.award %}
-        <em>{{ paper.award }}</em><br>
+        {% if paper.highlighted_award %}
+          <em style="color: red;">{{ paper.award }}</em><br>
+        {% else %}
+          <em>{{ paper.award }}</em><br>
+        {% endif %}
       {% endif %}
       {% if paper.preliminary %}
         <small>Preliminary version: {{ paper.preliminary }}</small>
@@ -26,8 +35,9 @@ author_profile: true
   {% endfor %}
 </ul>
 
-<!-- <!-- Journal Publications Section -->
-<h2>Journal Publications</h2>
+
+<!-- Journal Publications Section -->
+<!-- <h2>Journal Publications</h2>
 <hr>
 {% assign journal_papers = site.publications | where: "category", "Journal Publications" %}
 <ul>
@@ -44,7 +54,7 @@ author_profile: true
       {% endif %}
     </li>
   {% endfor %}
-</ul> -->
+</ul> --> -->
 
 
 
