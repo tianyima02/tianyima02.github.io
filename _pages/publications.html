@@ -8,7 +8,7 @@ author_profile: true
 <!-- Selected Working Papers Section -->
 <h1>Selected Working Papers</h1>
 <hr>
-{% assign working_papers = site.publications | where: "category", "Working Papers" %}
+{% assign working_papers = site.publications | where: "category", "Working Papers"  | sort: "date" | reverse %}
 <ul>
   {% for paper in working_papers %}
     <li>
@@ -37,7 +37,7 @@ author_profile: true
 <!-- Journal Publications Section -->
 <!-- <h1>Journal Publications</h1>
 <hr>
-{% assign journal_papers = site.publications | where: "category", "Journal Publications" %}
+{% assign journal_papers = site.publications | where: "category", "Journal Publications"  | sort: "date" | reverse %}
 <ul>
   {% for paper in journal_papers %}
     <li>
