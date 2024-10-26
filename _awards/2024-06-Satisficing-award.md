@@ -1,6 +1,7 @@
 ---
-title: "Best Paper Award"
-description: "Awarded by INFORMS for outstanding paper on data mining."
+title: "INFORMS Data Mining Best Theoretical Paper Award"
+designation: "Finalist" # New field for designation
 year: 2024
 category: "Research Recognition"
 ---
+
