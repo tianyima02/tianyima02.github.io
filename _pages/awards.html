@@ -9,7 +9,7 @@ author_profile: true
 <h2>Research Recognitions</h2>
 <hr>
 <ul>
-  {% assign research_recognition = site.awards | where: "category", "Research Recognition" %}
+  {% assign research_recognition = site.awards | where: "category", "Research Recognition" | sort: "date" | reverse %}
   {% for award in research_recognition %}
     <li>
       {% if award.designation %}
@@ -23,7 +23,7 @@ author_profile: true
 <h2>Honors and Scholarships</h2>
 <hr>
 <ul>
-  {% assign honors = site.awards | where: "category", "Honors" %}
+  {% assign honors = site.awards | where: "category", "Honors" | sort: "date" | reverse %}
   {% for award in honors %}
     <li>
       <strong>{{ award.title }}</strong>
