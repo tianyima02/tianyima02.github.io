@@ -9,10 +9,7 @@ main:
     url: /publications/
 
   - title: "Awards"
-    url: /awards/
-
-  - title: "Teaching"
-    url: /teaching/    
+    url: /awards/ 
     
   - title: "CV"
     url: /assets/Tianyi_Ma.pdf
