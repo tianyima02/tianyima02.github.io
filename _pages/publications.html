@@ -5,31 +5,46 @@ permalink: /publications/
 author_profile: true
 ---
 
-<!-- {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %} -->
+<h1>Research</h1>
 
-{% include base_path %}
-
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+<!-- Selected Working Papers Section -->
+<h2>Selected Working Papers</h2>
+<hr>
+{% assign working_papers = site.publications | where: "category", "Working Papers" %}
+<ul>
+  {% for paper in working_papers %}
+    <li>
+      <strong>{{ paper.title }}</strong><br>
+      {{ paper.authors }}<br>
+      {% if paper.award %}
+        <em>{{ paper.award }}</em><br>
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+      {% if paper.preliminary %}
+        <small>Preliminary version: {{ paper.preliminary }}</small>
+      {% endif %}
+    </li>
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+</ul>
+
+<!-- <!-- Journal Publications Section -->
+<h2>Journal Publications</h2>
+<hr>
+{% assign journal_papers = site.publications | where: "category", "Journal Publications" %}
+<ul>
+  {% for paper in journal_papers %}
+    <li>
+      <strong>{{ paper.title }}</strong><br>
+      {{ paper.authors }}<br>
+      {{ paper.journal }}{% if paper.status %} ({{ paper.status }}){% endif %}<br>
+      {% if paper.preliminary %}
+        <small>Preliminary version: {{ paper.preliminary }}</small>
+      {% endif %}
+      {% if paper.award %}
+        <em>{{ paper.award }}</em><br>
+      {% endif %}
+    </li>
   {% endfor %}
-{% endif %}
+</ul> -->
 
 
 
