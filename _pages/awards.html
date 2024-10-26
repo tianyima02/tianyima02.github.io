@@ -12,17 +12,14 @@ author_profile: true
   {% assign research_recognition = site.awards | where: "category", "Research Recognition" %}
   {% for award in research_recognition %}
     <li>
-      <strong>{{ award.title }}</strong><br>
-      {{ award.description }}<br>
-      <small>{{ award.year }}</small>
+      <strong>{% if award.designation %}{{ award.designation }}, {% endif %}{{ award.title }}</strong>, {{ award.year }}
     </li>
   {% endfor %}
 </ul>
 
-<!-- Honors Section -->
-<h2>Honors and Scholarship</h2>
+<h2>Honors and Scholarships</h2>
 <hr>
-<ul style="list-style-type: none; padding: 0;">
+<ul>
   {% assign honors = site.awards | where: "category", "Honors" %}
   {% for award in honors %}
     <li style="margin-bottom: 1em;">
