@@ -1,7 +1,7 @@
 ---
-title: "Presidential Scholarship"
-description: "Top scholarship for Tsinghua undergrads. 10/16,000+ university-wide."
-institution: "Tsinghua University"
-year: 2023
+title: "National Scholarship"
+description: "Top scholarship in China; 0.2% domestically"
+institution: "Ministry of Education"
+year: 2024
 category: "Honors"
 ---
