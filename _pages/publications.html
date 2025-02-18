@@ -22,7 +22,7 @@ author_profile: true
       
       {% if paper.preliminary %}
         <ul style="list-style-type: circle; margin: 0; padding-left: 20px;">
-          <li style="margin-bottom: -5px; line-height: 1.2;">
+          <li style="margin-bottom: -5px; line-height: 1.5;">
             <em>{% assign preliminary_text = paper.preliminary | replace: "(**", "<strong>" | replace: "**)", "</strong>" %}
               {{ preliminary_text }}</em>
           </li>
@@ -31,7 +31,7 @@ author_profile: true
       
       {% if paper.award %}
         <ul style="list-style-type: circle; margin: 0; padding-left: 20px; padding-top: 0;">
-          <li style="margin-top: -5px; margin-bottom: 0; padding: 0; line-height: 1.2;">
+          <li style="margin-top: -5px; margin-bottom: 0; padding: 0; line-height: 1.5;">
             {% if paper.highlighted_award %}
               <em style="color: red;">{{ paper.award }}</em>
             {% else %}
