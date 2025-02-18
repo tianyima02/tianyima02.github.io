@@ -19,6 +19,9 @@ author_profile: true
       {% endif %}
       <br>
       {{ paper.authors }}<br>
+      {% if paper.preliminary %}
+        <small><em>{{ paper.preliminary }}</em></small><br>
+      {% endif %}
       {% if paper.award %}
         {% if paper.highlighted_award %}
           <em style="color: red;">{{ paper.award }}</em><br>
@@ -26,9 +29,7 @@ author_profile: true
           <em>{{ paper.award }}</em><br>
         {% endif %}
       {% endif %}
-      {% if paper.preliminary %}
-        <small>Preliminary version: {{ paper.preliminary }}</small>
-      {% endif %}
+
     </li>
   {% endfor %}
 </ul>
