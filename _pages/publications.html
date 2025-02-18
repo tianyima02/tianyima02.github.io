@@ -62,4 +62,27 @@ author_profile: true
   {% endfor %}
 </ul> -->
 
+<!-- Selected Conference Papers Section -->
+<h1>Selected Conference Papers</h1>
+<hr>
+{% assign conference_papers = site.publications | where: "category", "Conference Publications"  | sort: "date" | reverse %}
+<ul>
+  {% for paper in conference_papers %}
+    <li>
+      {% if paper.link %}
+        <strong><a href="{{ paper.link }}" target="_blank">{{ paper.title }}</a></strong>
+      {% else %}
+        <strong>{{ paper.title }}</strong>
+      {% endif %}
+      <br>
+      {{ paper.authors }}<br>
+      {% if paper.preliminary %}
+        <ul style="list-style-type: circle;">
+          <li><em>{% assign preliminary_text = paper.preliminary | replace: "(**", "<strong>" | replace: "**)", "</strong>" %}
+            {{ preliminary_text }}</em><br></li>
+        </ul>
+      {% endif %}
 
+    </li>
+  {% endfor %}
+</ul>
