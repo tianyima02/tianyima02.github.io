@@ -20,13 +20,13 @@ author_profile: true
       <br>
       {{ paper.authors }}<br>
       {% if paper.preliminary %}
-        <ul style="list-style-type: circle;">
+        <ul style="list-style-type: circle; margin: 0; padding-left: 20px;">
           <li><em>{% assign preliminary_text = paper.preliminary | replace: "(**", "<strong>" | replace: "**)", "</strong>" %}
             {{ preliminary_text }}</em><br></li>
         </ul>
       {% endif %}
       {% if paper.award %}
-        <ul style="list-style-type: circle;">
+        <ul style="list-style-type: circle; margin: 0; padding-left: 20px;">
           <li>
           {% if paper.highlighted_award %}
             <em style="color: red;">{{ paper.award }}</em><br>
