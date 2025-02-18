@@ -20,7 +20,8 @@ author_profile: true
       <br>
       {{ paper.authors }}<br>
       {% if paper.preliminary %}
-        <em>{{ paper.preliminary }}</em><br>
+        <em>{% assign preliminary_text = paper.preliminary | replace: "(**", "<strong>" | replace: "**)", "</strong>" %}
+            {{ preliminary_text }}</em><br>
       {% endif %}
       {% if paper.award %}
         {% if paper.highlighted_award %}
